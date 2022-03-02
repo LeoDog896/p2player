@@ -42,7 +42,7 @@ Whenever Player 1 places down the card, they broadcast the index and card number
 If Player 2 and 3 generate 10 and 8 again, Player 1 lets them know that they already have that card -- Player 1 gives them the part that they generated with the index -- they try again
 
 ##### Cheating
-Assume Player 1 has 5 cards -- Player 1 can say they already have the card they gave until they run out of card lenghts
+Assume Player 1 has 5 cards -- Player 1 can say they already have the card they gave until they run out of card lenghts.
 
 ##### Solution
 Assuming Player 1 wants a different card than chosen --
@@ -56,7 +56,7 @@ Player 1 has 3 cards:
 
 Player 2 sent (number 10, index 1) to Player 1. Player 1 responds with this information that they gave them as well as to Player 2. They both verify this information. If the player lies about having the card, they have to provide indexes of the card it was at.
 
-This means that they can only use that card once to cheat, reducing cheating methods
+This means that they can only use that card once to cheat, reducing cheating methods. **However, it is not certain**
 
 (TODO: Clean up?)
 
@@ -81,6 +81,16 @@ Card numbers are in this order, from `{0, 1 .. 52 - 1}`
 
 #### Getting a card
 
-``
+##### Packets
+`card_request`: -> player broadcast
+`card_number(num)`: -> player
 
-### Start
+##### Procedure
+
+Player who requests card = Pr
+
+Pr sends `card_request`.
+
+All players except for Pr send `card_number(num) -> Pr`, num = a random number {0, 1, ..., (total amount of cards) - 1}
+
+The player who wants a card takes the sum of all `card_number` packets % (total amount of cards).
