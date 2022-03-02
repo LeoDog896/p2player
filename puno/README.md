@@ -1,7 +1,7 @@
 
 # puno
 
-Decentralized Card Game based on popular game mechanics. Based on Golle's Algorithm.
+Decentralized Card Game based on popular game mechanics. [Based on Golle's Algorithm](https://crypto.stanford.edu/~pgolle/papers/stable.pdf).
 
 ## Card Distribution
 
